@@ -1,0 +1,139 @@
+draw.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Draw & Play</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffde7;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #ffd54f;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .navbar a:hover {
+      color: #ff4081;
+    }
+
+    /* Drawing Area */
+    .draw-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    canvas {
+      border: 3px solid #ff4081;
+      border-radius: 20px;
+      background-color: #ffffff;
+      touch-action: none;
+    }
+
+    .controls {
+      margin-top: 1rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+
+    .footer {
+      background-color: #ffd54f;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Drawing Section -->
+  <div class="draw-container">
+    <h1 style="color:#ff4081;">🖍️ Draw Something Fun!<br>Save your drawing as an image if you'd love to</h1>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <div class="controls">
+      <button onclick="clearCanvas()">🧼 Clear</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 Kids Learn | Draw & Play
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let painting = false;
+
+    function startPosition(e) {
+      painting = true;
+      draw(e);
+    }
+
+    function endPosition() {
+      painting = false;
+      ctx.beginPath();
+    }
+
+    function draw(e) {
+      if (!painting) return;
+      const x = e.offsetX || e.touches[0].clientX - canvas.offsetLeft;
+      const y = e.offsetY || e.touches[0].clientY - canvas.offsetTop;
+
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#42a5f5';
+
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Mouse events
+    canvas.addEventListener('mousedown', startPosition);
+    canvas.addEventListener('mouseup', endPosition);
+    canvas.addEventListener('mousemove', draw);
+
+    // Touch events (for phones/tablets)
+    canvas.addEventListener('touchstart', startPosition);
+    canvas.addEventListener('touchend', endPosition);
+    canvas.addEventListener('touchmove', draw);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Numbers</title>
+  <style>
+    body {
+      background-color: #fff9c4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f57f17;
+      font-size: large;
+    }
+
+    .number-button {
+      font-size: 2rem;
+      margin: 10px;
+      padding: 20px;
+      width: 80px;
+      height: 80px;
+      background-color: #ffcc80;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .number-button:hover {
+      background-color: #ffb74d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click a Number</h1>
+
+  <!-- Number Buttons -->
+  <div>
+    <button class="number-button" onclick="playSound(1)">11</button>
+    <button class="number-button" onclick="playSound(2)">2</button>
+    <button class="number-button" onclick="playSound(3)">3</button>
+    <button class="number-button" onclick="playSound(4)">4</button>
+    <button class="number-button" onclick="playSound(5)">5</button>
+    <button class="number-button" onclick="playSound(6)">6</button>
+    <button class="number-button" onclick="playSound(7)">7</button>
+    <button class="number-button" onclick="playSound(8)">8</button>
+    <button class="number-button" onclick="playSound(9)">9</button>
+    <button class="number-button" onclick="playSound(10)">10</button><br><br>
+    <button class="number-button" onclick="playSound(11)">11</button>
+    <button class="number-button" onclick="playSound(12)">12</button>
+    <button class="number-button" onclick="playSound(13)">13</button>
+    <button class="number-button" onclick="playSound(14)">14</button>
+    <button class="number-button" onclick="playSound(15)">15</button>
+    <button class="number-button" onclick="playSound(16)">16</button>
+    <button class="number-button" onclick="playSound(17)">17</button>
+    <button class="number-button" onclick="playSound(18)">18</button>
+    <button class="number-button" onclick="playSound(19)">19</button>
+    <button class="number-button" onclick="playSound(20)">20</button><br><br>
+    <button class="number-button" onclick="playSound(21)">21</button>
+    <button class="number-button" onclick="playSound(22)">22</button>
+    <button class="number-button" onclick="playSound(23)">23</button>
+    <button class="number-button" onclick="playSound(24)">24</button>
+    <button class="number-button" onclick="playSound(25)">25</button>
+    <button class="number-button" onclick="playSound(26)">26</button>
+    <button class="number-button" onclick="playSound(27)">27</button>
+    <button class="number-button" onclick="playSound(28)">28</button>
+    <button class="number-button" onclick="playSound(29)">29</button>
+    <button class="number-button" onclick="playSound(30)">30</button><br><br>
+    <button class="number-button" onclick="playSound(31)">31</button>
+    <button class="number-button" onclick="playSound(32)">32</button>
+    <button class="number-button" onclick="playSound(33)">33</button>
+    <button class="number-button" onclick="playSound(34)">34</button>
+    <button class="number-button" onclick="playSound(35)">35</button>
+    <button class="number-button" onclick="playSound(36)">36</button>
+    <button class="number-button" onclick="playSound(37)">37</button>
+    <button class="number-button" onclick="playSound(38)">38</button>
+    <button class="number-button" onclick="playSound(39)">39</button>
+    <button class="number-button" onclick="playSound(40)">40</button><br><br>
+    <button class="number-button" onclick="playSound(41)">41</button>
+    <button class="number-button" onclick="playSound(42)">42</button>
+    <button class="number-button" onclick="playSound(43)">43</button>
+    <button class="number-button" onclick="playSound(44)">44</button>
+    <button class="number-button" onclick="playSound(45)">45</button>
+    <button class="number-button" onclick="playSound(46)">46</button>
+    <button class="number-button" onclick="playSound(47)">47</button>
+    <button class="number-button" onclick="playSound(48)">48</button>
+    <button class="number-button" onclick="playSound(49)">49</button>
+    <button class="number-button" onclick="playSound(50)">50</button>
+
+  </div>
+
+  <!-- Sound Elements -->
+  <audio id="sound1" src="audio/1.mp3"preload="auto"></audio>
+  <audio id="sound2" src="audio/2.mp3"></audio>
+  <audio id="sound3" src="audio/3.mp3"></audio>
+  <audio id="sound4" src="audio/4.mp3"></audio>
+  <audio id="sound5" src="audio/5.mp3"></audio>
+  <audio id="sound6" src="audio/6.mp3"></audio>
+  <audio id="sound7" src="audio/7.mp3"></audio>
+  <audio id="sound8" src="audio/8.mp3"></audio>
+  <audio id="sound9" src="audio/9.mp3"></audio>
+  <audio id="sound10" src="audio/10.mp3"></audio>
+
+  <!-- JavaScript -->
+  <script>
+    function playSound(num) {
+      const sound = document.getElementById('sound' + num);
+      if (sound) {
+      sound.play();
+    } else {
+        alert("sound not found for number: " + num);
+        }
+    }
+  </script>
+
+</body>
+</html>

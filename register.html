@@ -1,0 +1,45 @@
+<!-- Register.html -->
+ <!DOCTYPE html>
+ <html>
+    <head>
+        <title> Register your child\ward </title>
+    </head>
+    <body>
+        <form action="submit.html"method="post">
+        <h2> Register your child/ward </h2>
+        <label for="child's name">Child's Name:</label>
+        <input type="text"id="child's name"name="child's name" required>
+        <br><br>
+        <label for="child's age">Childs Age:</label>
+        <input type="text"id="child's age"name="child's age"max length="1" required>
+        <br><br>
+        <h5> Has the child been registered in a school?</h5>
+        <input type="radio"id="Yes"name="Yes"value="Yes">
+        <label for="Yes">Yes</label>
+        <br>
+        <input type="radio"id="No"name="No"value="No">
+        <label for="No">No</label>
+        <br><br>
+        <h5><i>If yes, state the child's performance in school</i></h5>
+        <br>
+        <input type="text" required>
+        <br><br>
+        <label for="parent's name">Parent's Name:</label>
+        <input type="text"id="parent's name"name="parent's name" required>
+        <br><br>
+        <label for="phone">Phone no.</label>
+        <input type="text"id="phone"name="phone no."maxlength="11">
+        <br><br>
+        <label for="Email">Email Address</label>
+        <input type="text"id="Email"name="Email Address" required>
+        <br><br>
+        <label for="file">Upload a passport photograph</label>
+        <input type="file"id="file"name="file"accept=".jpg, .png, .pdf" required>
+        <br>
+        <br>
+        <br>
+        <a href="submit.html"></a>
+        <input type="submit"value="Register">
+    </form>
+    </body>
+</html>

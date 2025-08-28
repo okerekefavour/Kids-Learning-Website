@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <style>
+    body {
+      background-color: #ffe6e6;
+      text-align: center;
+      font-family: Comic Sans MS, sans-serif;
+    }
+
+    h1 {
+      color: brown;
+      margin-top: 50px;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .box {
+      width: 200px;
+      height: 150px;
+      margin: 15px;
+      background-color: #ffccff;
+      color: #333;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px solid #cc0099;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .box:hover {
+      background-color: #ff99cc;
+      transform: scale(1.05);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Just a Click Away to your FUN LEARNING</h1>
+
+  <div class="menu-container">
+    <a href="letters.html"><div class="box">📚 Letters</div></a>
+    <a href="numbers.html"><div class="box">🔢 Numbers</div></a>
+    <br>
+    <a href="draw.html"><div class="box">🎨 Drawing Space</div></a>
+    <a href="pictures.html"><div class="box">🖼️ Pictures</div></a>
+  </div>
+
+</body>
+</html>
